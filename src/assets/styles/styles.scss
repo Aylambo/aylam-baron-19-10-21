@@ -1,0 +1,31 @@
+// // Setup
+// @import "setup/variables.scss";
+// @import "setup/functions.scss";
+// @import "setup/mixins.scss";
+// @import "setup/typography.scss";
+
+// // Basics
+// @import "basics/reset.scss";
+// @import "basics/helpers.scss";
+// @import "basics/layout.scss";
+// @import "basics/base.scss";
+// @import "basics/buttons.scss";
+
+// Components
+@import "cmps/loading-spinner.scss";
+@import "cmps/Error.scss";
+@import "cmps/Header.scss";
+@import "cmps/Form.scss";
+@import "cmps/CurrentDay.scss";
+@import "cmps/UpcomingDays.scss";
+@import "cmps/DaysPreview.scss";
+@import "cmps/Forecast.scss";
+@import "cmps/FavPreview.scss";
+
+
+
+// Pages
+
+@import "pages/WeatherPage.scss";
+@import "pages/FavoritesPage.scss";
+@import "pages/App.scss";

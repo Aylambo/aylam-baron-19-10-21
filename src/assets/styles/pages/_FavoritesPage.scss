@@ -1,0 +1,16 @@
+.favs-main {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+
+}
+
+@media (max-width: 480px) {
+
+    .favs-main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}

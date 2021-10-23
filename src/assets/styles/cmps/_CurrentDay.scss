@@ -1,0 +1,84 @@
+.main-card-content {
+
+
+
+    .icon-div {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+    }
+
+
+    .curr-day-info {
+        color: #6c757d;
+        text-transform: uppercase;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+        border: 1px solid black;
+        align-items: center;
+        padding: 10px;
+        
+        
+        img {
+            width: 200px;
+            border-radius: 15%;
+        }
+
+        .curr-day-text {
+            width: 50%;
+
+           
+            h5 {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                font-size: 1.25rem;
+                color: black;
+            }
+
+            .temp-div {
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                font-size: calc(1.475rem + 2vw);
+                font-weight: 300;
+                line-height: 1.2;
+                color: black;
+            }
+        }
+
+    }
+
+}
+
+.show {
+    display: inline-block;
+    height: 50px;
+    // width: 100px;
+}
+
+.black {
+    display: none;
+    // background-color: black;
+}
+
+.red {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+
+@media (max-width: 480px) {
+    .main-card-content {
+        width: 80vw;
+        .curr-day-info {
+            img {
+                width: 150px;
+            }
+        }
+}
+}

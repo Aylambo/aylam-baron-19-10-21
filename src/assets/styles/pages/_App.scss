@@ -1,0 +1,22 @@
+.light {
+    color: #111!important;
+    background: rgb(241, 211, 211);
+
+}
+
+.dark {
+    color: #FFF!important;
+    background-color: #111;
+    a,h5,span {
+        color: #FFF!important;
+    }
+    
+    form .button {
+        background-color: transparent;
+        border: 1px solid #FFF
+    }
+
+    .heading:hover {
+        color: #FFF;
+    }
+}
