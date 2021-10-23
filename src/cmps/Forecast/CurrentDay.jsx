@@ -17,7 +17,6 @@ const CurrentDay = (props) => {
     const addFavorite = () => {
         const isFavorite = favorites.isFavorite = !favorites.isFavorite
         setIsFavorite(isFavorite)
-        console.log('isFavorite', isFavorite);
         onAdd({...props, isFavorite: isFavorite})
     }
     return (

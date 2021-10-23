@@ -14,7 +14,6 @@ export function loadFavorites() {
 }
 
 export function addFavorite(favorite) {
-  console.log('Adding favorite', favorite)
   return async dispatch => {
     try {
       const addedFavorite = await favoriteService.save(favorite)

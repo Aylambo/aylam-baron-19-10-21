@@ -20,7 +20,7 @@ const useForecast = () => {
     const getUserCity = async (lat, lon) => {
 
 
-            const BASE_URL = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search';
+            const BASE_URL = 'https://dataservice.accuweather.com/locations/v1/cities/geoposition/search/';
             const query = `?apikey=${API_KEY}&q=${lat},${lon}`
             const {data} = await axios(BASE_URL + query)
             
@@ -34,7 +34,7 @@ const useForecast = () => {
 
     const getCity = async (city) => {
         // const BASE_URL = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-        const BASE_URL = 'http://dataservice.accuweather.com/locations/v1/cities/autocomplete';
+        const BASE_URL = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete/';
         const query = `?apikey=${API_KEY}&q=${city}`
 
         const {
@@ -50,7 +50,7 @@ const useForecast = () => {
     }
 
     const getLocationWeather = async (id) => {
-        const BASE_URL = 'http://dataservice.accuweather.com/currentconditions/v1/';
+        const BASE_URL = 'https://dataservice.accuweather.com/currentconditions/v1/';
         const query = `${id}?apikey=${API_KEY}`
 
         const {
@@ -67,7 +67,7 @@ const useForecast = () => {
     }
 
     const getFiveDays = async (id) => {
-        const BASE_URL = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/'
+        const BASE_URL = 'https://dataservice.accuweather.com/forecasts/v1/daily/5day/'
         const query = `${id}?apikey=${API_KEY}`
         const {
             data
@@ -96,7 +96,6 @@ const useForecast = () => {
         setLoading(true);
         setError(false);
         const res = await getCity(location);
-        console.log('res', res);
         if (!res?.Key) return;
 
         const data = await getLocationWeather(res.Key);
