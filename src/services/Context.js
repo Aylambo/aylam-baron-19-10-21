@@ -14,10 +14,12 @@ export function ContextProvider({children}) {
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [tempType, setTempType] = useState(true)
     const [isFav, setIsFavorite] = useState(false)
+    const [favoritesToDisplay, setFavoritesToDisplay] = useState([])
 
 
 
-    const value = {setIsFavorite, isFav, eventData, setEventData, selectedEvent, setSelectedEvent, isDarkMode, setIsDarkMode, setTempType, tempType}
+
+    const value = {setFavoritesToDisplay, favoritesToDisplay, setIsFavorite, isFav, eventData, setEventData, selectedEvent, setSelectedEvent, isDarkMode, setIsDarkMode, setTempType, tempType}
 
     return (
         <mainContext.Provider value={value}>

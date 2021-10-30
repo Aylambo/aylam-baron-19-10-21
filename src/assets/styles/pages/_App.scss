@@ -1,12 +1,15 @@
 .light {
     color: #111!important;
     background: rgb(241, 211, 211);
+    height:200vh;
 
 }
 
 .dark {
     color: #FFF!important;
     background-color: #111;
+    height:200vh;
+
     a,h5,span {
         color: #FFF!important;
     }
@@ -15,6 +18,16 @@
         background-color: transparent;
         border: 1px solid #FFF
     }
+    
+    form .autocomp-list {
+        background-color: black;
+        
+    }
+    form .input-div .input {
+        background-color: black;
+        color: #FFF;
+    }
+
 
     .heading:hover {
         color: #FFF;

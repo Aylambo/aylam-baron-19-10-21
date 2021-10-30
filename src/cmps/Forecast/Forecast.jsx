@@ -3,19 +3,19 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux'
 import CurrentDay from './CurrentDay';
 import UpcomingDays from './UpcomingDays';
-import { addFavorite } from '../../store/actions/favoritesAction.js'
-import {useMainContext} from '../../services/Context'
+import { addFavorite, removeFavorite } from '../../store/actions/favoritesAction.js'
 
 const Forecast = ({ forecast }) => {
 
     const dispatch = useDispatch()
-    const {setIsFavorite} = useMainContext()
     
-    const onAdd = (place) => {
-        setIsFavorite(place.isFavorite);
-        dispatch(addFavorite(place))
-        
-    }
+        const onAdd = (place) => {
+            
+            if (place.isFavorite) {
+                dispatch(addFavorite(place))  
+            } else {    
+                dispatch(removeFavorite(place._id))
+            }}
 
     return (
 
@@ -41,3 +41,4 @@ const Forecast = ({ forecast }) => {
 }
 
 export default Forecast
+

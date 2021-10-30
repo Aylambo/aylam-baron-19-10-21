@@ -1,5 +1,5 @@
 
-const getCurrentDayForecast = (data, cityName) => {
+const getCurrentDayForecast = (data, cityName, id) => {
   return {
       location: cityName,
       weatherText: data.WeatherText,
@@ -7,6 +7,7 @@ const getCurrentDayForecast = (data, cityName) => {
       icon: data.WeatherIcon,
       isDayTime: data.IsDayTime,
       isFavorite: false,
+      _id: id
     }  
 
 

@@ -14,6 +14,8 @@ const CurrentDay = (props) => {
 
     const {tempType, setTempType, isFav, setIsFavorite} = useMainContext()
 
+    
+
     const addFavorite = () => {
         const isFavorite = favorites.isFavorite = !favorites.isFavorite
         setIsFavorite(isFavorite)

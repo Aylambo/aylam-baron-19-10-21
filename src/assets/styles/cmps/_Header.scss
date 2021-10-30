@@ -51,6 +51,12 @@ header {
 @media (max-width: 480px) {
     header {
         height: 50px;
+        width: 100vw;
+        section {
+            h6 {
+                display: none;
+            }
+        }
         h1 { 
             display: none;
         }

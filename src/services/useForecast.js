@@ -4,13 +4,14 @@ import getCurrentDay from './getCurrentDay.js'
 import getUpcomingDays from './getUpcomingDays.js'
 
 
-const API_KEY = 'qtGicaL6HeFwpGmdcJpCZSO8VEOArdI8'
+const API_KEY = 'BG6qKZHFXNCCihgRfVCAbsJq3BGP1THr'
 
 const useForecast = () => {
     const [isError, setError] = useState(false);
     const [isLoading, setLoading] = useState(false);
     const [forecast, setForecast] = useState(null);
     const [userCity, setUserCity] = useState(null);
+    const [autoComplete, setAutoComplete] = useState(null);
     
     navigator.geolocation.getCurrentPosition((position) => {
         const lat = position.coords.latitude;
@@ -33,8 +34,7 @@ const useForecast = () => {
     }
 
     const getCity = async (city) => {
-        // const BASE_URL = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-        const BASE_URL = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete/';
+        const BASE_URL = 'https://dataservice.accuweather.com/locations/v1/cities/search';
         const query = `?apikey=${API_KEY}&q=${city}`
 
         const {
@@ -47,6 +47,21 @@ const useForecast = () => {
             return;
         }
         return data[0]
+    }
+    const getAutocomplete = async (city) => {
+        const BASE_URL = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete/';
+        const query = `?apikey=${API_KEY}&q=${city}`
+
+        const {
+            data
+        } = await axios(BASE_URL + query)
+
+        if (!data || data.length === 0) {
+            setError('Something went wrong, no such city please try again');
+            setLoading(false);
+            return;
+        }
+        return setAutoComplete(data)
     }
 
     const getLocationWeather = async (id) => {
@@ -82,7 +97,7 @@ const useForecast = () => {
 
 
     const getData = (res, data, fiveDaysData) => {
-        const currentDay = getCurrentDay(data[0], res.LocalizedName);
+        const currentDay = getCurrentDay(data[0], res.LocalizedName, res.Key);
         const upcomingDays = getUpcomingDays(fiveDaysData.DailyForecasts);
 
         setForecast({
@@ -113,7 +128,9 @@ const useForecast = () => {
         isLoading,
         forecast,
         submitRequest,
-        userCity
+        userCity,
+        getAutocomplete,
+        autoComplete
         
     }
 
